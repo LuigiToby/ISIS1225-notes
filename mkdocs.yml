@@ -6,13 +6,13 @@ nav:
 
 theme:
   name: material
+  palette:
+    scheme: slate   # dark mode only
   features:
-    - navigation.tabs
-    - navigation.sections
     - navigation.top
-    - toc.integrate     # integrates outline into sidebar
-    - toc.follow        # auto-scrolls TOC
-    - content.tabs.link # collapse/expand headers
+    - toc.integrate     # outline on the side
+    - toc.follow        # outline scrolls with you
+    - content.code.copy # copy button on code blocks
 
 markdown_extensions:
   - admonition
@@ -21,5 +21,5 @@ markdown_extensions:
   - tables
   - footnotes
   - def_list
-  - pymdownx.details   # collapsing sections
+  - pymdownx.details     # collapsible sections
   - pymdownx.superfences
