@@ -56,4 +56,23 @@ body .md-sidebar {
   display: none !important;
 }
 
+/* OLED dark mode background */
+body {
+  background-color: #000 !important;
+}
+
+/* Keep sidebar clearly visible */
+.md-sidebar--primary {
+  background-color: #000 !important;
+}
+
+/* Hide the blue top navigation bar */
+.md-header {
+  display: none !important;
+}
+
+/* Move content up since header is gone */
+.md-main {
+  margin-top: 0 !important;
+}
 
