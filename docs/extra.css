@@ -40,14 +40,20 @@ h6 { color: #ff79c6 !important; }
   margin-top: 0 !important;
 }
 
-
 /* OLED dark mode background */
 body {
   background-color: #000 !important;
 }
 
-/* Keep sidebar clearly visible */
+/* Hide the left sidebar */
 .md-sidebar--primary {
-  background-color: #000 !important;
+  display: none !important;
 }
+
+/* Hide the left sidebar with higher specificity */
+body .md-sidebar--primary,
+body .md-sidebar {
+  display: none !important;
+}
+
 

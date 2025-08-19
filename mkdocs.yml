@@ -13,22 +13,7 @@ theme:
   features:
     - navigation.instant
     - navigation.expand
+    - toc.integrate
     - toc.follow
-
-plugins:
-  - toc-nav:
-      enabled: true
-      toc_depth: 3   # include up to ### headings
-
-markdown_extensions:
-  - admonition
-  - toc:
-      permalink: true
-  - tables
-  - footnotes
-  - def_list
-  - pymdownx.details
-  - pymdownx.superfences
-
-extra_css:
-  - extra.css
+  extra_css:
+    - docs/extra.css
