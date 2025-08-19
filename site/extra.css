@@ -29,3 +29,13 @@ h6 { color: #ff79c6 !important; }
     --color-base-40: #4a4a4a;
     /* ... (rest of your Obsidian theme variables and rules) ... */
 }
+
+/* Hide the blue top navigation bar */
+.md-header {
+  display: none !important;
+}
+
+/* Move content up since header is gone */
+.md-main {
+  margin-top: 0 !important;
+}

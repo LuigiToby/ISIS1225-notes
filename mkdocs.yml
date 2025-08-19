@@ -11,12 +11,14 @@ theme:
       primary: black
       accent: lime
   features:
-    - toc.integrate     # outline on the side
-    - toc.follow        # outline scrolls with you
-    - content.code.copy # copy button on code blocks
+    - navigation.instant
+    - navigation.expand
+    - toc.follow
 
-extra_css:
-  - extra.css
+plugins:
+  - toc-nav:
+      enabled: true
+      toc_depth: 3   # include up to ### headings
 
 markdown_extensions:
   - admonition
@@ -25,5 +27,8 @@ markdown_extensions:
   - tables
   - footnotes
   - def_list
-  - pymdownx.details     # collapsible sections
+  - pymdownx.details
   - pymdownx.superfences
+
+extra_css:
+  - extra.css
