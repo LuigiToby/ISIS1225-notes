@@ -33,4 +33,4 @@ markdown_extensions:
   - footnotes
   - def_list
   - pymdownx.details     # collapsible sections
-  - pymdownx.superfencescd 
+  - pymdownx.superfences
