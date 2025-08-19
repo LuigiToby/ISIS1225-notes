@@ -39,21 +39,3 @@ h6 { color: #ff79c6 !important; }
 .md-main {
   margin-top: 0 !important;
 }
-
-/* OLED dark mode background */
-body {
-  background-color: #000 !important;
-}
-
-/* Hide the left sidebar */
-.md-sidebar--primary {
-  display: none !important;
-}
-
-/* Hide the left sidebar with higher specificity */
-body .md-sidebar--primary,
-body .md-sidebar {
-  display: none !important;
-}
-
-
