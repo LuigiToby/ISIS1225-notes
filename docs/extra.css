@@ -1,0 +1,31 @@
+/* === OLED Dark Mode Overrides for MkDocs Material === */
+body, .md-content, .md-main, .md-typeset {
+    background-color: #000000 !important; /* true black for OLED */
+    color: #e0e0e0 !important;
+}
+
+/* Links */
+a {
+    color: #50fa7b !important;
+}
+
+/* Rainbow headings */
+h1 { color: #ff5555 !important; }
+h2 { color: #f1fa8c !important; }
+h3 { color: #50fa7b !important; }
+h4 { color: #8be9fd !important; }
+h5 { color: #bd93f9 !important; }
+h6 { color: #ff79c6 !important; }
+
+/* === Adapted from Obsidian theme.css === */
+.theme-dark {
+    --color-base-00: #0e0e0e;
+    --color-base-05: #343434;
+    --color-base-10: #242424;
+    --color-base-20: #1a1a1a;
+    --color-base-25: #262626;
+    --color-base-30: #333333;
+    --color-base-35: #363636;
+    --color-base-40: #4a4a4a;
+    /* ... (rest of your Obsidian theme variables and rules) ... */
+}
