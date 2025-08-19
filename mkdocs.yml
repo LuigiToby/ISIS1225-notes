@@ -11,9 +11,19 @@ theme:
       primary: black
       accent: lime
   features:
-    - navigation.instant
-    - navigation.expand
-    - toc.integrate
-    - toc.follow
-  extra_css:
-    - docs/extra.css
+    - toc.integrate     # outline on the side
+    - toc.follow        # outline scrolls with you
+    - content.code.copy # copy button on code blocks
+
+extra_css:
+  - extra.css
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+  - footnotes
+  - def_list
+  - pymdownx.details     # collapsible sections
+  - pymdownx.superfences
