@@ -11,20 +11,13 @@ theme:
       primary: black
       accent: lime
   features:
-    - navigation.top
     - toc.integrate     # outline on the side
     - toc.follow        # outline scrolls with you
     - content.code.copy # copy button on code blocks
+
 extra_css:
   - extra.css
 
-
-
-theme:
-  name: material
-  palette:
-    scheme: slate   # dark mode only
- 
 markdown_extensions:
   - admonition
   - toc:
