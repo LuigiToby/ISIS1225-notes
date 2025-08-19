@@ -1,3 +1,25 @@
 site_name: ISIS1225 Notes
+site_url: https://luigitoby.github.io/ISIS1225-notes/
+
+nav:
+  - Home: ISIS1225.md
+
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate     # integrates outline into sidebar
+    - toc.follow        # auto-scrolls TOC
+    - content.tabs.link # collapse/expand headers
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+  - footnotes
+  - def_list
+  - pymdownx.details   # collapsing sections
+  - pymdownx.superfences
