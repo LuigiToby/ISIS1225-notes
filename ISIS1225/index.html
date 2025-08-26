@@ -280,14 +280,22 @@ tags includes #academy/202520/ISIS1225
 </code></pre></div>
 <h3 id="examenes">Exámenes<a class="headerlink" href="#examenes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[ ] #academy/202520/ISIS1225 EVA1 ⏫ 📅 2025-09-04 </li>
+<li>[ ] #academy/202520/ISIS1225 EVA1 ⏫ 📅 2025-09-04 <ul>
+<li>[ ] Verificar presentaciones</li>
+<li>[ ] Tener muy claro casos específicos de código</li>
+<li>[ ] Estudiar el bono que nunca fue</li>
+<li>[ ] Estudiar estructuras de los laboratorios</li>
+<li>[ ] array_list</li>
+<li>[ ] single_linked_lists</li>
+</ul>
+</li>
 <li>[ ] #academy/202520/ISIS1225 EVA2 ⏫ 📅 2025-10-09 </li>
 <li>[ ] #academy/202520/ISIS1225 EVA3 ⏫ 📅 2025-11-06 </li>
 <li>[ ] #academy/202520/ISIS1225 EVA4 ⏫ 📅 2025-12-01 </li>
 </ul>
 <h3 id="retos">Retos<a class="headerlink" href="#retos" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[ ] #academy/202520/ISIS1225 Reto1 release 📅 2025-08-19</li>
+<li>[x] #academy/202520/ISIS1225 Reto1 release 📅 2025-08-21 ✅ 2025-08-20</li>
 <li>[ ] #academy/202520/ISIS1225 Reto2 release 📅 2025-09-15</li>
 <li>[ ] #academy/202520/ISIS1225 Reto3 release 📅 2025-10-16</li>
 <li>[ ] #academy/202520/ISIS1225 Reto4 release 📅 2025-11-11</li>
@@ -306,13 +314,13 @@ tags includes #academy/202520/ISIS1225
 <p>[x] #academy/202520/ISIS1225 LAB2 release 📅 2025-08-14 ✅ 2025-08-14</p>
 </li>
 <li>
-<p>[ ] #academy/202520/ISIS1225 LAB2 entrega 📅 2025-08-20</p>
+<p>[x] #academy/202520/ISIS1225 LAB2 entrega 📅 2025-08-20 ✅ 2025-08-20</p>
 </li>
 <li>
-<p>[ ] #academy/202520/ISIS1225 LAB3 release 📅 2025-08-21  </p>
+<p>[x] #academy/202520/ISIS1225 LAB3 release 📅 2025-08-21 ✅ 2025-08-20</p>
 </li>
 <li>
-<p>[ ] #academy/202520/ISIS1225 LAB3 entrega 📅 2025-08-27</p>
+<p>[x] #academy/202520/ISIS1225 LAB3 entrega 📅 2025-08-27 ✅ 2025-08-26</p>
 </li>
 <li>
 <p>[ ] #academy/202520/ISIS1225 LAB4 release 📅 2025-08-28  </p>
@@ -1909,6 +1917,276 @@ Uno no hace esto a menos que lo haga con mutables.</p>
 <li>Inserción a la cola es <code>O(n)</code> a menos que tenga referencia a la cola, en ese casi si es <code>O(1)</code></li>
 <li>Eliminación en la cola es <code>O(n)</code> aunque tenga referencia. Pues tengo que devolverme uno y apuntarlo a <code>None</code></li>
 </ol>
+<h2 id="w04m1">W04M1<a class="headerlink" href="#w04m1" title="Permanent link">&para;</a></h2>
+<p>![[Pasted image 20250825110838.png]]
+* Array list ventajas
+    * Implementación sencilla
+    * Almanecamiento contiguo
+    * Eficiente par buscar por índice
+    * Ananir o elimiar es O(1), excepto por la amortización, que no es O(n), pero si es más que O(1)
+* Array lists desventajas
+    * Redimensionamiento y copiado es necesario
+        * Hacer esto es O(n), pues implica copiar todos los elementos
+    * Inserción y eliminación es costoso
+        * Desplaza elementos O(n)
+* Single linked lists ventajas
+    * Literalmente solo longitud flexible...
+* Single linked lists desventajas
+    * Literalmente todo lo demás
+* Ojo existe una diferencia entre head-tail lists y las listas enlazadas simples
+    * La primera tiene obligatoriamente un puntero a la cola, ganando inserción al final O(1)</p>
+<h3 id="tipo-de-datos-abstracto-o-tad-enfoque-en-que-no-en-el-como">Tipo de datos abstracto o TAD: Enfoque en <strong>que</strong>, no en el <code>como</code><a class="headerlink" href="#tipo-de-datos-abstracto-o-tad-enfoque-en-que-no-en-el-como" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TAD<ul>
+<li>Lo que nos permite interactuar entre operaciones</li>
+<li>Una forma de abstracción, donde no importa la implementación sino del serivcio</li>
+</ul>
+</li>
+<li>Por ejemplo problema 1 necesita operacion1 y operacion2</li>
+<li>La pregunta es cual estructura va a ser más eficiente para un TAD en es específico</li>
+<li>Encapsula los datos y las operaciones permitidas,<ul>
+<li>Se aproxima a un api</li>
+</ul>
+</li>
+<li>Encapsulamiento<ul>
+<li>Los datos solo se pueden manipular a través de las operaciones en el TAD, es básicamente una api, entonces todo esta básicamente bien definido desde el inicio</li>
+</ul>
+</li>
+<li>La estructura de datos si se enfoca en el <strong>cómo</strong><ul>
+<li>Inserción en el inicio es necesaria, entonces es claro que se necesita un single linked list
+![[Pasted image 20250825112034.png|center]]</li>
+</ul>
+</li>
+</ul>
+<h4 id="la-pregunta-es-cual-elegir">La pregunta es cual elegir<a class="headerlink" href="#la-pregunta-es-cual-elegir" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Depende del problema</li>
+<li>El tad me dice que requiero una lista</li>
+<li>La estructura de datos me dice que implementación de list va a ser la mejor para el TAD en específico.</li>
+<li>Note que el tad va a cambiar en función del tiempo.</li>
+</ul>
+<h3 id="estructuras-lineales-3">Estructuras lineales 3<a class="headerlink" href="#estructuras-lineales-3" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>[!note] Note que en la <a href="https://isis1225devs.github.io/ISIS1225-Structure-Documentation/DataStructures.Graph.html">documentación del curso</a> se realizo con la figura de diccionarios.
+Que pasa si lo hacemos con lista?</p>
+</blockquote>
+<h4 id="primer-intento-de-lista-nativa">Primer intento de lista nativa<a class="headerlink" href="#primer-intento-de-lista-nativa" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Implementaremos <code>new_list()</code>, <code>is_fist()</code>, <code>add_list()</code></li>
+<li>Primeras dos es <code>O(1)</code></li>
+<li>Pero luego para hacer add_list() note que este a a tener complejidad O(n), pues la concatenación nos retorna una nueva lista, por eso a python le toca copiar todo y por eso es O(n). luego si voy al insert, lo mismo, porque tengo que correr todo. Entonces grave porque la complejidad al inicio debería de O(1), no O(n).</li>
+</ul>
+<h4 id="segundo-intento-diccionario">Segundo intento, diccionario<a class="headerlink" href="#segundo-intento-diccionario" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Implementaremos <code>new_list()</code>, <code>is_fist()</code>, <code>add_list()</code></li>
+<li>Primeras dos es <code>O(1)</code> (Un poco más complicado pero bien, es un diccionario con 3 llaves)</li>
+<li>is_empty() es O(1), solo verificamos el size</li>
+<li>finalmente el <code>add_first()</code><ul>
+<li>Creo nuevo nodo, y lo apunto hacia la cabeza, y luego actualizo el puntero de la cabeza.</li>
+</ul>
+</li>
+</ul>
+<h4 id="ejemplo-recorrido-total-de-una-lista-enlazada-simple">Ejemplo recorrido total de una lista enlazada simple<a class="headerlink" href="#ejemplo-recorrido-total-de-una-lista-enlazada-simple" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>def print_list_info(my_list):
+    &quot;&quot;&quot;
+    Imprime la información de cada nodo en una lista simplemente enlazada.
+
+    :param lst: Lista simplemente enlazada.
+    :type lst: dict
+
+    :return: Muestra la información en pantalla.
+    :rtype: None
+
+    &gt;&gt;&gt; my_list = {&quot;first&quot;: None, &quot;last&quot;: None, &quot;size&quot;: 0}
+    &gt;&gt;&gt; print_list_info(my_list)
+
+    &gt;&gt;&gt; my_list = {&quot;first&quot;: {&quot;info&quot;: 10, &quot;next&quot;: {&quot;info&quot;: 20, &quot;next&quot;: {&quot;info&quot;: 30, &quot;next&quot;: None}}}, &quot;size&quot;: 3}
+    &gt;&gt;&gt; print_list_info(my_list)
+    10
+    20
+    30
+    &quot;&quot;&quot;
+    if my_list[&quot;size&quot;] &gt; 0:
+        current_node = my_list[&quot;first&quot;]
+        while current_node is not None:
+            print(current_node[&quot;info&quot;])
+            current_node = current_node[&quot;next&quot;]
+</code></pre></div>
+<h2 id="w04m2">W04M2<a class="headerlink" href="#w04m2" title="Permanent link">&para;</a></h2>
+<h3 id="lista-enlazada-doble">Lista enlazada doble<a class="headerlink" href="#lista-enlazada-doble" title="Permanent link">&para;</a></h3>
+<ul>
+<li>En este escenario podemos devolvernos, ya no es unidireccionar, ahora tenemos apuntadores para el objeto previo, ya no solo para el next.</li>
+<li>Se usa un sentinela, pero no sentinela IP sino tener un header y trailer siempre iguales. </li>
+<li>Next, prep, next, prep hasta trailer que esta marcado con el fin. directamente.</li>
+<li>Centinela<ul>
+<li>Nos permite simplificar los casos especiales</li>
+<li>No almacena datos</li>
+<li>Permanecen inmutables</li>
+<li>Solo cambian los nodos inbtermedios</li>
+<li>Son opcionales pero</li>
+<li>Simplifican la lógica de implementación<ul>
+<li>En especial la inserción o borrado<ul>
+<li>Siempre serán entre nodos existentes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Complejidad temporal de la lista enlazada doble<ul>
+<li>El acceso secuencial debe recorrerse nodo por nodo desde la cabeza</li>
+<li>Sin índices directos</li>
+<li>No hay acceso inmediato a algún nodo específico.</li>
+<li>Entonces es <code>O(n)</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="insercion-al-inicio-o1">Inserción al inicio <code>O(1)</code><a class="headerlink" href="#insercion-al-inicio-o1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Agregamos un nuevo nodo</li>
+<li>Luego actualizamos las referencias<ol>
+<li>Del nodo nuevo hay que apuntarlo al que era el nuevo, a la cabeza</li>
+<li>Luego actualizar la vabeza</li>
+<li>Finalmente actualizar el viejo al que ahora es el primero.</li>
+</ol>
+</li>
+<li>Como son solo actualizaciones O(1)</li>
+</ol>
+<h4 id="eliminacion-al-inicio-o1">Eliminación al inicio <code>O(1)</code><a class="headerlink" href="#eliminacion-al-inicio-o1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Acceso inmediato al nodo centinela header</li>
+<li>Actualziar las referencias, del header al next, y el next apuntarlo al header</li>
+<li>Si se gquiere la idea es que el nodo eliminado quitar sus punteros, apuntando a None.</li>
+</ul>
+<h4 id="insercion-interna-on-o-eliminacion-interna">Inserción interna <code>O(n)</code> (O eliminación interna)<a class="headerlink" href="#insercion-interna-on-o-eliminacion-interna" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Tenemos que iterar hasta el nodo que queremos</li>
+<li>Crear el nodo</li>
+<li>Actualizar las cuatro referencias, de los dos nodos de lado y lado</li>
+<li>Esto es O(n), porque tengo que ir nodo por nodo hasta llegar al que necesitamos</li>
+<li>El problema es que tengo que navegar desde el header o tailer</li>
+</ol>
+<h4 id="insercioneliminacion-al-final-o1">Inserción/Eliminación al final <code>O(1)</code><a class="headerlink" href="#insercioneliminacion-al-final-o1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Tengo acceso inmediato al final gracias al <code>trailer</code>, por lo tanto es una operación rápida.</li>
+<li>Igual para eliminación</li>
+</ul>
+<h4 id="beneficio-con-double-vs-single">Beneficio con double vs single<a class="headerlink" href="#beneficio-con-double-vs-single" title="Permanent link">&para;</a></h4>
+<ul>
+<li>La eliminación al final es O(1) en double vs single que es O(1), lo cual es genial.</li>
+</ul>
+<h3 id="lista-circular">Lista circular<a class="headerlink" href="#lista-circular" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cada nodo apunta a otro nodo<ul>
+<li>Formando un ciclo cerrado</li>
+</ul>
+</li>
+<li>No hay un nodo apuntando a <code>None</code></li>
+<li>Pero sin embargo sigo teniendo un head y un tail, la diferencia es que no tengo <code>None</code> al final.</li>
+<li>El problema es saber cuando detenerse</li>
+</ul>
+<h4 id="circular-single-linked-list">Circular single linked list<a class="headerlink" href="#circular-single-linked-list" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Acceso <code>O(n)</code><ol>
+<li>No existe acceso directo</li>
+<li>Es neesario recorrer todos los nodos hasta encontrar el deseado</li>
+<li>Complejidad en el peor caso O(n)</li>
+</ol>
+</li>
+<li>Inserción/Eliminación al inicio <code>O(1)</code><ol>
+<li>Si uno tiene un puntero en la cola<ol>
+<li>Se enlaza en nuevo nodo con el primero</li>
+</ol>
+</li>
+<li>Misma lógica que anteriormente</li>
+</ol>
+</li>
+<li>Inserción interna <code>O(n)</code><ol>
+<li>Se puede jugar con cosas, pero igualmente va a dar <code>O(n)</code></li>
+</ol>
+</li>
+<li>Eliminación al final <code>O(n)</code><ol>
+<li>Este es un resultado general para los single linked</li>
+</ol>
+</li>
+</ol>
+<h4 id="circular-single-linked-list_1">Circular single linked list<a class="headerlink" href="#circular-single-linked-list_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Eliminación al final <code>O(1)</code><ol>
+<li>Única ganancia comparado a circular single linked list</li>
+</ol>
+</li>
+</ol>
+<h3 id="lista-doblemente-enlazada-vs-lista-circular-doble">Lista doblemente enlazada vs Lista circular doble<a class="headerlink" href="#lista-doblemente-enlazada-vs-lista-circular-doble" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Navegación continua<ol>
+<li>En doble se debe reiniciar manualmente</li>
+<li>Circular doble permite recorrido continuo<ol>
+<li>Útil en buffers, planificación, videojuegos</li>
+</ol>
+</li>
+<li>Misma complejidad, diferente utilidad<ol>
+<li>Eficiencia igual</li>
+<li>Navegación cíclica sin reinicios<ol>
+<li>Lista circular doble</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="pilas-y-colas">Pilas y colas<a class="headerlink" href="#pilas-y-colas" title="Permanent link">&para;</a></h3>
+<p>Estructura de datos de comportamiento LIFO, first to enter, last to leave.
+* Último en entrar, primer en salir (Last In, First Out)
+* Principales operaciones
+    * <code>push()</code>
+        * Añade un elemento al tope de la pila
+    * <code>pop()</code>
+        * Me llevo una bandeja de arriba y me la llevo
+    * <code>top()</code>
+        * Me llevo la bandeja de arriba sin removerlo</p>
+<h3 id="implementacion-pila-en-python">Implementación Pila en python<a class="headerlink" href="#implementacion-pila-en-python" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code># 1 S.push(e) = L.append(e)
+#2 S.pop() = L.pop()
+#3 S.top() = L[-1]
+#4 S.is_empty() = len(L) == 0
+#5 len(S) =  len(L)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># El len funciona como queremos en python
+print(len([0,1,2]))
+</code></pre></div>
+1. En este  caso solamente agrego al final, entonecs <code>O(1)*</code> amortizado
+2. Pop es una eliminación al final, no desplaza, <code>O(1)*</code> (amortizado)
+3. Top, es un acceso por indice, <code>O(1)</code>
+4. is_empty, es <code>O(1)</code>, porque tiene contador
+5. len es <code>O(1)</code>, yay.</p>
+<ul>
+<li>Es muy eficiente, salvo los casos amoritzados</li>
+</ul>
+<h3 id="cola">Cola<a class="headerlink" href="#cola" title="Permanent link">&para;</a></h3>
+<p>Comportamiento fijo, primero en entrar, primero en salir, es el opuesto de la pila. Es un ascensor básicamente.
+1. Enqueue
+    1. Añade elemento al ==final==.
+2. Dequeue
+    1. Remueve y retorna elemento del ==frente==.
+3. Peek
+    1. Retorna elemento del final sin quitarlo. Similar al Dequeue, pero solo consulta.
+* Algunos ejemplos son
+    * Imprimir elementos 
+    * Ascensor
+    * Colar</p>
+<h3 id="cola-en-python-cola-con-single-linked-list">~~Cola en python~~ Cola con single linked list<a class="headerlink" href="#cola-en-python-cola-con-single-linked-list" title="Permanent link">&para;</a></h3>
+<p><strong>No se debería usar</strong>, pues todas las funciones van a ser <code>O(n)</code>
+1. Enqueue
+    1. Añade elemento al ==final==.
+        1. Se puede implemetar con add_last, <code>O(1)</code>
+2. Dequeue
+    1. Remueve y retorna elemento del ==frente==.
+        1. Se puede usar delete_last <code>O(1)</code>
+3. Peek
+    1. Retorna elemento del final sin quitarlo. Similar al Dequeue, pero solo consulta\
+        1. remove_first es <code>O(1)</code></p>
 <h1 id="recap">Recap<a class="headerlink" href="#recap" title="Permanent link">&para;</a></h1>
 <h1 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h1>
 <ol>
