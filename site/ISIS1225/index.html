@@ -280,7 +280,7 @@ tags includes #academy/202520/ISIS1225
 </code></pre></div>
 <h3 id="examenes">Exámenes<a class="headerlink" href="#examenes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[ ] #academy/202520/ISIS1225 EVA1 ⏫ 📅 2025-09-04 <ul>
+<li>[x] #academy/202520/ISIS1225 EVA1 Son solo dos puntos ⏫ 📅 2025-09-04 ✅ 2025-09-04<ul>
 <li>[ ] Verificar presentaciones</li>
 <li>[ ] Tener muy claro casos específicos de código</li>
 <li>[ ] Estudiar el bono que nunca fue</li>
@@ -296,10 +296,10 @@ tags includes #academy/202520/ISIS1225
 <h3 id="retos">Retos<a class="headerlink" href="#retos" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[x] #academy/202520/ISIS1225 Reto1 release 📅 2025-08-21 ✅ 2025-08-20</li>
-<li>[ ] #academy/202520/ISIS1225 Reto2 release 📅 2025-09-15</li>
+<li>[ ] #academy/202520/ISIS1225 Reto2 release 📅 2025-09-17</li>
 <li>[ ] #academy/202520/ISIS1225 Reto3 release 📅 2025-10-16</li>
 <li>[ ] #academy/202520/ISIS1225 Reto4 release 📅 2025-11-11</li>
-<li>[ ] #academy/202520/ISIS1225 Reto1 entrega 🔼 📅 2025-09-10</li>
+<li>[ ] #academy/202520/ISIS1225 Reto1 entrega 🔼 📅 2025-09-16</li>
 <li>[ ] #academy/202520/ISIS1225 Reto2 entrega🔼 📅 2025-10-15</li>
 <li>[ ] #academy/202520/ISIS1225 Reto3 entrega🔼 📅 2025-11-12 </li>
 <li>[ ] #academy/202520/ISIS1225 Reto4 entrega🔼 📅 2025-12-03 </li>
@@ -323,10 +323,10 @@ tags includes #academy/202520/ISIS1225
 <p>[x] #academy/202520/ISIS1225 LAB3 entrega 📅 2025-08-27 ✅ 2025-08-26</p>
 </li>
 <li>
-<p>[ ] #academy/202520/ISIS1225 LAB4 release 📅 2025-08-28  </p>
+<p>[x] #academy/202520/ISIS1225 LAB4 release 📅 2025-08-28 ✅ 2025-08-28</p>
 </li>
 <li>
-<p>[ ] #academy/202520/ISIS1225 LAB4 entrega 📅 2025-09-03</p>
+<p>[x] #academy/202520/ISIS1225 LAB4 entrega 📅 2025-09-03 ✅ 2025-09-03</p>
 </li>
 <li>
 <p>[ ] #academy/202520/ISIS1225 LAB5 parte 1 release 📅 2025-09-11  </p>
@@ -2187,10 +2187,598 @@ print(len([0,1,2]))
 3. Peek
     1. Retorna elemento del final sin quitarlo. Similar al Dequeue, pero solo consulta\
         1. remove_first es <code>O(1)</code></p>
+<h2 id="w05m1">W05M1<a class="headerlink" href="#w05m1" title="Permanent link">&para;</a></h2>
+<h3 id="repaso-de-recursion">Repaso de recursión<a class="headerlink" href="#repaso-de-recursion" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Esta se compone por el caso base y por el caso recursivo</li>
+<li>Estos componentes son los obligatorios </li>
+<li>No todos los problemas se pueden hacer de forma, pero se tiene que dar que el problema se pueda dividir en varios subplroblemas.</li>
+<li>Referirse a [[ISIS1225#Recursividad]]</li>
+</ul>
+<h3 id="complejidad-temporal_1">Complejidad temporal<a class="headerlink" href="#complejidad-temporal_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Los casos base son por lo genera <code>O(1)</code>, pues son comparaciones y solo tienenun retorno, por lo general</li>
+<li>Luego en la parte recursiva vemos una complejidad temporal diferente, cada llamada genera una llamada adicional, hasta llegar a 1, en el caso de <code>factorial(n)</code> vemos que hay un total de <code>n</code> activaciones.</li>
+</ul>
+<h3 id="call-stack-y-complejidad-espacial">Call Stack y complejidad espacial<a class="headerlink" href="#call-stack-y-complejidad-espacial" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ALmacena invocaciones a funciones y variables locales<ul>
+<li>Durante la ejecución de un programa</li>
+</ul>
+</li>
+<li>Entonces cada vez que se llama una función se llaman frames.</li>
+<li>El contexto se desapila solo cuando la función termina.<ul>
+<li>Así sabe <code>python</code> cual fibonachi va primero, básicamente.</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h2 id="isis1225eva1op">ISIS1225EVA1OP<a class="headerlink" href="#isis1225eva1op" title="Permanent link">&para;</a></h2>
+<h3 id="algoritmos-y-complejidad_1">Algoritmos y Complejidad<a class="headerlink" href="#algoritmos-y-complejidad_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Características</strong>: precisos, correctos, determinísticos, finitos.  </li>
+<li><strong>Cualidades</strong>: generales, eficientes.  </li>
+<li><strong>Análisis</strong>:</li>
+<li>Temporal → número de operaciones.</li>
+<li>Espacial → memoria usada.</li>
+<li><strong>Notaciones</strong>:</li>
+<li>Θ: crecimiento exacto (teórico, difícil).</li>
+<li>Ω: mejor caso (cota inferior).</li>
+<li>O: peor caso (cota superior, más usada).</li>
+</ul>
+<hr />
+<h3 id="ordenes-de-crecimiento">Órdenes de crecimiento<a class="headerlink" href="#ordenes-de-crecimiento" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Orden</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>O(1)</strong></td>
+<td>Constante</td>
+<td>Acceso por índice</td>
+</tr>
+<tr>
+<td><strong>O(log n)</strong></td>
+<td>Logarítmico</td>
+<td>Búsqueda binaria</td>
+</tr>
+<tr>
+<td><strong>O(n)</strong></td>
+<td>Lineal</td>
+<td>Recorrer lista</td>
+</tr>
+<tr>
+<td><strong>O(n log n)</strong></td>
+<td>Linealítmico</td>
+<td>Merge/Quick sort</td>
+</tr>
+<tr>
+<td><strong>O(n²)</strong></td>
+<td>Cuadrático</td>
+<td>Doble bucle</td>
+</tr>
+<tr>
+<td><strong>O(n³)</strong></td>
+<td>Cúbico</td>
+<td>Triple bucle</td>
+</tr>
+<tr>
+<td><strong>O(2ⁿ)</strong></td>
+<td>Exponencial</td>
+<td>Fibonacci recursivo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo O(1):</strong>
+<div class="highlight"><pre><span></span><code>def es_par(n): return n % 2 == 0
+print(es_par(10))
+````
+
+**Ejemplo O(log n):**
+
+```run-python
+def busqueda_binaria(lista, x):
+    i, j = 0, len(lista)-1
+    while i &lt;= j:
+        m = (i+j)//2
+        if lista[m] == x: return m
+        elif lista[m] &lt; x: i = m+1
+        else: j = m-1
+    return None
+print(busqueda_binaria([1,2,3,4,5,6], 5))
+</code></pre></div></p>
+<hr />
+<h3 id="complejidad-espacial_2">Complejidad Espacial<a class="headerlink" href="#complejidad-espacial_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Espacio total</th>
+<th>Espacio auxiliar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Duplicar lista</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Ordenar copia</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Ordenar in-place</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo espacio O(n):</strong></p>
+<div class="highlight"><pre><span></span><code>def duplicar_lista(lista): return [x*2 for x in lista]
+print(duplicar_lista([1,2,3]))
+</code></pre></div>
+<hr />
+<h3 id="recursividad_3">Recursividad<a class="headerlink" href="#recursividad_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Caso base</strong>: condición que detiene la recursión.</p>
+</li>
+<li>
+<p><strong>Caso recursivo</strong>: llamada a problema más pequeño.</p>
+</li>
+<li>
+<p><strong>Reglas</strong>: siempre converger al caso base, operaciones posteriores bien definidas.</p>
+</li>
+</ul>
+<p><strong>Factorial (O(n)):</strong></p>
+<div class="highlight"><pre><span></span><code>def factorial(n): return 1 if n &lt;= 1 else n * factorial(n-1)
+print(factorial(5))
+</code></pre></div>
+<p><strong>Fibonacci (O(2ⁿ)):</strong></p>
+<div class="highlight"><pre><span></span><code>def fibonacci(n): return n if n &lt; 2 else fibonacci(n-1)+fibonacci(n-2)
+print(fibonacci(6))
+</code></pre></div>
+<hr />
+<h3 id="iteracion-vs-recursion">Iteración vs Recursión<a class="headerlink" href="#iteracion-vs-recursion" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Iteración</th>
+<th>Recursión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Espacio</td>
+<td>O(1)</td>
+<td>O(n) por pila</td>
+</tr>
+<tr>
+<td>Eficiencia</td>
+<td>Mejor</td>
+<td>Peor si no es tail</td>
+</tr>
+<tr>
+<td>Ejemplo</td>
+<td>ciclos for/while</td>
+<td>factorial/fibonacci</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Iterativo:</strong></p>
+<div class="highlight"><pre><span></span><code>def factorial_iter(n):
+    res = 1
+    for i in range(2, n+1): res *= i
+    return res
+print(factorial_iter(5))
+</code></pre></div>
+<hr />
+<h3 id="listas">Listas<a class="headerlink" href="#listas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Ventajas</th>
+<th>Desventajas</th>
+<th>Complejidad clave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Array list</strong></td>
+<td>Acceso por índice O(1), fácil de implementar</td>
+<td>Inserción/elim. inicio O(n), redimensionamiento O(n)</td>
+<td>Acceso O(1), inserción inicio O(n)</td>
+</tr>
+<tr>
+<td><strong>Single linked list</strong></td>
+<td>Inserción/elim. inicio O(1), tamaño flexible</td>
+<td>Acceso secuencial O(n)</td>
+<td>Acceso O(n), insertar inicio O(1)</td>
+</tr>
+<tr>
+<td><strong>Doble</strong></td>
+<td>Navegación adelante/atrás</td>
+<td>Más punteros → más memoria</td>
+<td>Inserción/elim. fin O(1)</td>
+</tr>
+<tr>
+<td><strong>Circular</strong></td>
+<td>Navegación continua</td>
+<td>Difícil detectar fin</td>
+<td>Inserción inicio O(1)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo Linked List:</strong></p>
+<div class="highlight"><pre><span></span><code>class Node:
+    def __init__(self, info, nxt=None):
+        self.info, self.next = info, nxt
+n3 = Node(30); n2 = Node(20, n3); n1 = Node(10, n2)
+print(n1.info, n1.next.info, n1.next.next.info)
+</code></pre></div>
+<hr />
+<h3 id="pilas-stack-lifo">Pilas (Stack) – LIFO<a class="headerlink" href="#pilas-stack-lifo" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Último en entrar, primero en salir.</p>
+</li>
+<li>
+<p>Operaciones:</p>
+<ul>
+<li>
+<p><code>push(e)</code> → añadir al tope.</p>
+</li>
+<li>
+<p><code>pop()</code> → eliminar del tope.</p>
+</li>
+<li>
+<p><code>top()</code> → consultar sin eliminar.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Complejidad: todas <strong>O(1)</strong>.</p>
+</li>
+</ul>
+<p><strong>Ejemplo:</strong></p>
+<div class="highlight"><pre><span></span><code>stack = []
+stack.append(1)   # push
+stack.append(2)
+print(stack.pop()) # 2
+print(stack[-1])  # top → 1
+</code></pre></div>
+<hr />
+<h3 id="colas-queue-fifo">Colas (Queue) – FIFO<a class="headerlink" href="#colas-queue-fifo" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Primero en entrar, primero en salir.</p>
+</li>
+<li>
+<p>Operaciones:</p>
+<ul>
+<li>
+<p><code>enqueue(e)</code> → añadir al final.</p>
+</li>
+<li>
+<p><code>dequeue()</code> → eliminar del frente.</p>
+</li>
+<li>
+<p><code>peek()</code> → consultar frente.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Implementación eficiente con <strong>linked list</strong>: <code>enqueue</code> y <code>dequeue</code> O(1).</p>
+</li>
+</ul>
+<p><strong>Ejemplo:</strong></p>
+<div class="highlight"><pre><span></span><code>from collections import deque
+cola = deque()
+cola.append(1); cola.append(2)   # enqueue
+print(cola.popleft())  # 1
+print(cola[0])         # peek → 2
+</code></pre></div>
+<h2 id="w05m2">W05M2<a class="headerlink" href="#w05m2" title="Permanent link">&para;</a></h2>
+<h3 id="iteracion-en-python">Iteracion en python<a class="headerlink" href="#iteracion-en-python" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Un iterador es un obejto que representa un flujo de datos</li>
+<li>Se consume elemento por elemento sin llenar la memoría</li>
+<li>Implementar el protocolo <code>__iter__</code> y <code>__next__</code><ul>
+<li>Esta es la definición de u protocolo iterador</li>
+</ul>
+</li>
+<li>Cada vez que se ejecuta un ciclo for se va a terminar ejecutando un <code>StopIteration</code>
+<div class="highlight"><pre><span></span><code>lista = [10,20,30]
+Iterador = iter(lista)
+print(next(Iterador))
+print(next(Iterador))
+print(next(Iterador)) # Aquí ya se consumio la lista 
+print(next(Iterador))
+print(next(Iterador))
+print(next(Iterador))
+</code></pre></div></li>
+<li>Y si ya es un iterable, retorna a si mismo.</li>
+<li>Y de hecho los <code>for</code> no es otra cosa que enmascarar el protocolo <code>iter()</code> y <code>next()</code>, cuando for llama un iterable, de hecho lo pasa por <code>iter()</code>, para aja, volverlo iterable.<ul>
+<li>En cada iteración el for llama a <code>next()</code></li>
+</ul>
+</li>
+<li>
+<p>Al final se lanza un <code>StopIteration</code> cuando la lista esta vacía, esto no sale como tal, solo sale que el <code>for</code> termino por ejemplo.
+<div class="highlight"><pre><span></span><code>texto = &quot;Hola&quot;
+iterador = iter(texto)  # Se llama manualmente a iter()
+print(next(iterador))  # → &#39;H&#39;
+print(next(iterador))  # → &#39;o&#39;
+print(next(iterador))  # → &#39;l&#39;
+print(next(iterador))  # → &#39;a&#39;
+print(next(iterador))  # → StopIteration
+
+# Internamente se ve así 
+for letra in &quot;Hola&quot;:
+    print(letra)
+</code></pre></div>
+![[Pasted image 20250902111438.png|center]]</p>
+</li>
+<li>
+<p>Las razones para usar esto directamente es control total o para implementación lazy.</p>
+</li>
+</ul>
+<h3 id="implementacion-de-un-doble-lista-enlazada">Implementación de un doble lista enlazada<a class="headerlink" href="#implementacion-de-un-doble-lista-enlazada" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Recordemos esta tiene doble enlazamiento <code>next</code> y <code>prev</code></li>
+<li>Estos algoritmos son un poco más forgiven porque en la ==practica de hecho son más faciles==.</li>
+<li>Una pregunta del parcial va a ser así.
+<div class="highlight"><pre><span></span><code>def new_double_node(element):
+    &quot;&quot;&quot;
+    Crea un nodo para una lista doblemente enlazada.
+
+    El nodo contiene:
+    - info: Información almacenada en el nodo.
+    - next: Referencia al siguiente nodo, inicializada en None.
+    - prev: Referencia al nodo anterior, inicializada en None.
+
+    :param element: Elemento del nodo.
+    :type element: any
+
+    :return: Nodo recién creado.
+    :rtype: dict que representa a un nodo en una lista doblemente enlazada.
+    &quot;&quot;&quot;
+    return {&quot;info&quot;: element, &quot;next&quot;: None, &quot;prev&quot;: None}
+</code></pre></div></li>
+<li>Nuestra implementación es identica exepto por el <code>prev</code>, que me permite navegar para adelante y para atrás.
+<div class="highlight"><pre><span></span><code>def new_double_list():
+    &quot;&quot;&quot;
+    Crea una lista doblemente enlazada vacía con nodos centinela.
+
+    :return: Lista vacía recién creada.
+    :rtype: dict que representa una lista doblemente enlazada.
+    &quot;&quot;&quot;
+    header = {&quot;info&quot;: None, &quot;next&quot;: None, &quot;prev&quot;: None}  # Nodo centinela inicial
+    trailer = {&quot;info&quot;: None, &quot;next&quot;: None, &quot;prev&quot;: header}  # Nodo centinela final
+    header[&quot;next&quot;] = trailer
+
+    return {&quot;header&quot;: header, &quot;trailer&quot;: trailer, &quot;size&quot;: 0}
+</code></pre></div></li>
+<li>Note que esta lista tienen centinelas, esto la hace más sencilla, en especial para la implementación en el parcial 1.</li>
+<li>Muy bonito como se define
+<div class="highlight"><pre><span></span><code>def is_empty(my_list):
+    &quot;&quot;&quot;
+    Verifica si la lista doblemente enlazada está vacía.
+    &quot;&quot;&quot;
+    return my_list[&quot;size&quot;] == 0
+def size(my_list):
+    &quot;&quot;&quot;
+    Retorna el tamaño de la lista doblemente enlazada.
+    &quot;&quot;&quot;
+    return my_list[&quot;size&quot;] # Note que el size NO TIENEN EN CUENTA ni header ni tail
+</code></pre></div></li>
+</ul>
+<h3 id="insercion-al-inicio-o1_1">Inserción al inicio O(1)<a class="headerlink" href="#insercion-al-inicio-o1_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>def add_first(my_list, element):
+    new_node = new_double_node(element)
+    new_node[&quot;next&quot;] = my_list[&quot;header&quot;][&quot;next&quot;]
+    new_node[&quot;prev&quot;] = my_list[&quot;header&quot;]
+    my_list[&quot;header&quot;][&quot;next&quot;][&quot;prev&quot;] = new_node
+    my_list[&quot;header&quot;][&quot;next&quot;] = new_node
+    my_list[&quot;size&quot;] += 1
+    return my_list
+</code></pre></div>
+<h3 id="insercion-al-final-o1">Inserción al final <code>O(1)</code><a class="headerlink" href="#insercion-al-final-o1" title="Permanent link">&para;</a></h3>
+<h3 id="hablemos-del-parcial">Hablemos del parcial<a class="headerlink" href="#hablemos-del-parcial" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Hoja de bono de recursividad</li>
+<li>Primer punto del parcial se entrega una función iterativa y hay que <strong>pasarla a recursiva</strong>.<ul>
+<li>Posiblemente pregunte complejidades <strong>CT</strong> y <strong>CE</strong>.</li>
+</ul>
+</li>
+<li>Repasando lo de <strong>CE</strong> con espacio o memoría adicional, esta NO INCLUYE LOS STACKS, porque desde que se entra a python, ==main== es lo primero que se apila, pues entonces TODO usaría espacio adicional.</li>
+<li>En general en los algoritmos recursivos no hay espacio adicional.</li>
+<li>En el bono, para descomponer el bono, se debía descomponer el número el problema es que al hacer 1000//10, esto no es un proceso lineal <code>O(n)</code>, sino es <code>O(log n)</code>, pues no estoy procesando <code>n</code> veces mi input sino <code>log n</code> veces.</li>
+<li>Un algoritmo iterativo clasico y lo transformamos a recursivo.</li>
+</ul>
+<h2 id="w06m1">W06M1<a class="headerlink" href="#w06m1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Review de complejidad espacial, temporal, y ==estabilidad==.<ul>
+<li>Memoria extra es todo lo que se cree extra pero sin incluir el espacio de la lista original y tampoco incluye el call stack de python... pues esto implicaría que todo crea espacio adicional.</li>
+</ul>
+</li>
+<li>Los criterios de estabilidad tienen en cuenta <ul>
+<li>Estable, hace que el arreglo ordenado mantenga el orden relativo de los elementos a medida que entraron a la lista original. </li>
+<li>En el caso inestable no se considera esto. El orden relativo cambia.</li>
+</ul>
+</li>
+<li>Criterios de eficiencia espacial<ul>
+<li>In place<ul>
+<li>Realiza el ordenamiento modificando la estructura original<ul>
+<li>Minimiza el uso de memoria adicional</li>
+</ul>
+</li>
+<li>Ideal para restricciones de espacio.</li>
+</ul>
+</li>
+<li>Not in place<ul>
+<li>Requiere memoria adicional</li>
+<li>Crea estructuras nuevas</li>
+<li>Mayor consumo de espacio<ul>
+<li>hasta <code>O(n)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="selection-sort-super-obsoleto">Selection sort (Super <strong>obsoleto</strong>)<a class="headerlink" href="#selection-sort-super-obsoleto" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Busca el menor elemento en la lista<ul>
+<li>Intercambiándolo con elemento en la posición cero</li>
+</ul>
+</li>
+<li>Busca el 2do menor elemento en la lista<ul>
+<li>Intercambiándolo con elemento en la posición 1</li>
+</ul>
+</li>
+<li>Buscar el i-ésimo menor elemento en la lista<ul>
+<li>Intercambiándolo con elemento en la posición (i-1)</li>
+</ul>
+</li>
+<li>Es más que un <code>O(n)</code></li>
+<li>Su complejidad temporal es una serie aritmética, que se vuelve ==<code>O(n^2)</code>== (Comparaciones)</li>
+<li>Si esta todo desordenado esta hace <code>O(n)</code> cambios (Swaping)</li>
+<li>la espacial es <code>O(1)</code></li>
+<li>Y para tirarle sal a la herida es <strong>inestable</strong></li>
+</ul>
+<h3 id="insertion-sort">Insertion sort<a class="headerlink" href="#insertion-sort" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Inserta donde corresponde</li>
+<li>Por repeticiones es <code>O(n^2)</code></li>
+<li>En el peor caso los movimientos también son <code>O(n^2)</code></li>
+<li>Si la lista ya esta ordenada, entonces es <code>O(n)</code>, esto es mejor que el selection sort</li>
+<li>Además es in-place y es estable</li>
+</ul>
+<h3 id="shell-sort">Shell sort<a class="headerlink" href="#shell-sort" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wtf</li>
+<li>Esto lo hizo Robert no se quien, muy pilo el hombre la verdad</li>
+<li><code>O(n^1.5)</code>, pero esto es para secuencias probadas de forma empírica.</li>
+<li>Es ==inestable==, porque yo confío en el profe<ul>
+<li>Los saltos joden las posiciones</li>
+</ul>
+</li>
+</ul>
+<h2 id="w06m2">W06M2<a class="headerlink" href="#w06m2" title="Permanent link">&para;</a></h2>
+<h3 id="opciones-recursivas">Opciones recursivas<a class="headerlink" href="#opciones-recursivas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Complejidad espacial en el caso recursiva se hace en el peor uso de la memoria</li>
+<li>Incluye variables, estructuras de datos y el tamaño del stack<ul>
+<li>Ojo con el <code>espacio auxiliar</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="quick-sort">Quick Sort<a class="headerlink" href="#quick-sort" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>[!note] Quick sort lo usa java</p>
+<p>[!note] Note que hay Quick Sort in place y no in place</p>
+</blockquote>
+<ul>
+<li>Divide seleccionando un pivote y organiza los elementos en tres conjuntos, menores iguales y mayores del pivote</li>
+<li>Luego Ordena los subconjuntos de elementos menores y mayores</li>
+<li>Finalmente junta los subconjuntos</li>
+<li>El pivote puede ser el 1, -1 o el de la mitad. <ul>
+<li>Hay dobles pivotes también</li>
+</ul>
+</li>
+<li>Los elementos pueden estar en un posición no clara respecto al pivote</li>
+<li>El proceso de partición deja un pivote en su lugar.</li>
+<li>Caso base<ol>
+<li>Lista vacía o un solo elemento<ol>
+<li>No es necesario ordenarla</li>
+</ol>
+</li>
+<li>low&gt;= high<ol>
+<li>Quiere decir que la sublista llega a tener 0 o 1 elementos<ol>
+<li>Ya está ordenada</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Casos recursivos<ol>
+<li>Si low&lt; high si se aplica el caso recursivo</li>
+<li>Se seleciona un pivote</li>
+<li>Se particiona en el pivote<ol>
+<li>El pivote se pone en la mitad, en medio de los mayores y minores</li>
+<li>Luego se llama <code>quick_sort()</code> en las listas de los lados</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>def quick_sort(arr, low = 0, high = None): # Aquí tenemos valores por defecto, esto no significa que no la podamos llamar con otro valor
+    if high = None:
+        high = len(arr)-1 
+# quick_sort(arr) todo pasa con low=0 y el high se ajusta a len(arr)-1
+# Luego con quick_sort(arr, 2, 5) ahora la función solo ordena del indice 2 al 5
+# high= None es una bandera para decirle hasta donde debe ordenar
+    def partition(lst, low, high):
+        pivot = lst[high] # toma el último en la lista
+        i = low
+        for j in range(low,high):
+            if lst[j]&lt;pivot:
+                lst[i], lst[j] = lst[j], lst[i]
+                i+=1
+        lst[i], lst[high] = lst[high], lst[i] # Esto pone el pivote en la posición correta
+        return i
+    if low &lt; high:
+        pivot_index-partition(arr,low,high)
+        quick_sort(arr,low,pivot_index -1)
+        quick_sort(arr,pivot_index +1, high)
+</code></pre></div>
+<ul>
+<li>Permite ordenar ciertas partes de la función solamente</li>
+<li>Hace que la función sea más utilizable y autocontenida</li>
+</ul>
+<blockquote>
+<p>[!info] Sobre funciones anidadas o auxiliaries
+* Permiten separar partes de algoritmos que queremos implementar
+* Es una función definida dentro de otra función
+* Permite encapsular lógica específica para que solo la función que la contiene la vea.</p>
+<p>[!info] Complejidad temporal
+<code>O(n log n)</code> Para el caso promedio
+Para el peor caso, va a ser <code>O(n^2)</code>
+Mejor caso <code>O(n)</code></p>
+<p>[!info] Complejidad espacial
+<code>O(1)</code>, pues es implace, ==SEGURO?==
+Pero ojo, el stack va a irse llenando, aunque note que no se duplica la lista porque lo que hacemos
+Pero entonces por el stack va a ser <code>O(log n)</code> en el mejor caso y el caso promedio por la cantidad de llamadas que va a generar, y en este escenario el peor caso va a ser <code>O(n)</code></p>
+<p>[!warning] Estabilidad
+* Note que como el pivote es random, no hay un mecanismo de protección ante el orden relativo, entonces eso quiere decir que es ==inestable==. </p>
+</blockquote>
+<h3 id="merge-sort">Merge sort<a class="headerlink" href="#merge-sort" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Se divide la secuencia en dos mitades aprox iguales</li>
+<li>Se divide hasta que cada sublista tenga un solo elemento
+<div class="highlight"><pre><span></span><code>mid = len(arr)//2
+lh = merge_sort(arr[:mid])
+rh = merge_sort(arr[mid:])
+# Pero note que aquí estamos creando una nueva lista cada vez que la cortamos
+</code></pre></div></li>
+</ul>
+<hr />
 <h1 id="recap">Recap<a class="headerlink" href="#recap" title="Permanent link">&para;</a></h1>
 <h1 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h1>
 <ol>
 <li>https://eerosales24.github.io/eda_2025_20/#/</li>
+<li><a href="https://uniandes-my.sharepoint.com/:f:/g/personal/la_rodrigueza12_uniandes_edu_co/ElJPib3aVVZMo0CEiRYTsb4B9-y4gXH75X_CSaTBX-rKOA?e=wX3IgM">ISIS1225</a></li>
 </ol>
 <hr />
 
