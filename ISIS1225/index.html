@@ -2900,236 +2900,340 @@ rh = merge_sort(arr[mid:])
 <li>El análisis de la raíz no basta para decir que el arbol esta equilibrado, tenemos que ir bajando por cada Linea hasta terminar de efectivamente decir que esta equilibrado</li>
 <li>El truco es que el test no es un si solo si. Y se debe continuar ==ASÍ!== con cada nodo como  una raíz</li>
 <li>![[Pasted image 20251014114206.png|500]] </li>
-<li>
-<p>EL factor de equilibrio de calcula como
-<div class="highlight"><pre><span></span><code>  −1 ≤ factor de equilibrio ≤ 1 para todo nodo factor de equilibrio = altura del subárbol derecho − altura del subárbol izquierdo
-  ```
-
-&gt;[!info] Árbol binario
-&gt;* Tipo ed árbol donde cada nodo 
-&gt;* Puede tener como máximo 2 hijos
-&gt;   * Uno a la izquierda 
-&gt;   * Uno a la derecha
-&gt;* Esto quiere decir que el **orden = 2**, pero el grado no es necesariamente 2.
-&gt;* El árbol que puede tener más de dos es el ==árbol n-ario==
-&gt;* Hay un distinción entre árbol perfecto y árbol no perfecto
-&gt;   * En uno todas las hojas están en el mimo tivel
-&gt;* El árbol binario completo
-&gt;   * Todos los niveles excepto el último esta lleno, pero este tiene todos lo nodos a la izquierda como le sea posible.
-
-&gt;[!info] Definición recursiva de un arbol
-&gt; * Esta el caso base
-&gt;   * Un árbol vacío
-&gt; * Esta el caso recursivo
-&gt;   * Cada nodo es la raíz de un subárbol
-&gt;   * Cada subárbol en un árbol
-
-* EL **sub-arbol**  es el arbol generado de una sección determinada del árbol.
-* El **grado** es el número de hijos que tiene un nodo (El máximo)
-    * El grado me lo da el nodo máximo
-* El **peso** es la cantidad total de nodos, este se puede pre-calcular dependiendo el grado del arbol
-    * Usualmente se busca minimizar el peso del arbol.
-* Luego esta el número de **orden**, que es el número máximo de hijos que puede tener un nodo
-![[Pasted image 20251014112420.png]]
-* La **altura** es el número máximo de niveles de un árbol
-![[Pasted image 20251014112344.png]]
-* **Nivel** es igual a profundad
-* También esta el concepto de nivel, que es cada generacíon del arbol
-    * El arbol vacío no tiene 0 niveles
-    * La raíz siempre está en el nivel 0
-    * Los hijos de la raiz estan en nivel 1
-    * Los nietos de la raíz están en el nivel 2
-        * etc, etc, etc
-* Un árbol vacío es aquel que no tiene ningún nodo no arista, pero sigue siendo un árbol
-    * ¿Tiene un nodo raíz? como se que esta definido entonces
-* Tenemos tres partes importantes, la ==raíz==, **rama** y __hoja__
-    * La raíz no tiene padrea
-    * La rama es un nodo que no es ni la raíz y tiene al menos un hijo
-    * Las hojas son nodos sin hijos, aka el final de una rama
-    * Siempre tenemos una relación de padres/hijos
-        * También esta el concepto de hermano que es el que comparte un mismo padre en común dentro de la estructura.
-* Empezamos con arboles binarios, un precursor de los grafos
-* Los mapas nos mantienen a todo en un mismo nivel
-* Un arbol es una estructura de datos jerárquica que NO ES LINEAL. A diferencia de los arreglos. Donde hay elemento superiores e inferiores.
-* Los caminos son únicos dentro del arbol y nos dirigen entre los nodos pasando por las aristas.
-## W11M1
-Ordenamiento de arboles BST
+<li>EL factor de equilibrio de calcula como
+<div class="highlight"><pre><span></span><code>−1 ≤ factor de equilibrio ≤ 1 para todo nodo factor de equilibrio = altura del subárbol derecho − altura del subárbol izquierdo
+</code></pre></div></li>
+</ul>
+<blockquote>
+<p>[!info] Árbol binario
+* Tipo ed árbol donde cada nodo 
+* Puede tener como máximo 2 hijos
+  * Uno a la izquierda 
+  * Uno a la derecha
+* Esto quiere decir que el <strong>orden = 2</strong>, pero el grado no es necesariamente 2.
+* El árbol que puede tener más de dos es el ==árbol n-ario==
+* Hay un distinción entre árbol perfecto y árbol no perfecto
+  * En uno todas las hojas están en el mimo tivel
+* El árbol binario completo
+  * Todos los niveles excepto el último esta lleno, pero este tiene todos lo nodos a la izquierda como le sea posible.</p>
+<p>[!info] Definición recursiva de un arbol
+* Esta el caso base
+  * Un árbol vacío
+* Esta el caso recursivo
+  * Cada nodo es la raíz de un subárbol
+  * Cada subárbol en un árbol</p>
+</blockquote>
+<ul>
+<li>EL <strong>sub-arbol</strong>  es el arbol generado de una sección determinada del árbol.</li>
+<li>El <strong>grado</strong> es el número de hijos que tiene un nodo (El máximo)<ul>
+<li>El grado me lo da el nodo máximo</li>
+</ul>
+</li>
+<li>El <strong>peso</strong> es la cantidad total de nodos, este se puede pre-calcular dependiendo el grado del arbol<ul>
+<li>Usualmente se busca minimizar el peso del arbol.</li>
+</ul>
+</li>
+<li>Luego esta el número de <strong>orden</strong>, que es el número máximo de hijos que puede tener un nodo
+![[Pasted image 20251014112420.png]]</li>
+<li>La <strong>altura</strong> es el número máximo de niveles de un árbol
+![[Pasted image 20251014112344.png]]</li>
+<li><strong>Nivel</strong> es igual a profundad</li>
+<li>También esta el concepto de nivel, que es cada generacíon del arbol<ul>
+<li>El arbol vacío no tiene 0 niveles</li>
+<li>La raíz siempre está en el nivel 0</li>
+<li>Los hijos de la raiz estan en nivel 1</li>
+<li>Los nietos de la raíz están en el nivel 2<ul>
+<li>etc, etc, etc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Un árbol vacío es aquel que no tiene ningún nodo no arista, pero sigue siendo un árbol<ul>
+<li>¿Tiene un nodo raíz? como se que esta definido entonces</li>
+</ul>
+</li>
+<li>Tenemos tres partes importantes, la ==raíz==, <strong>rama</strong> y <strong>hoja</strong><ul>
+<li>La raíz no tiene padrea</li>
+<li>La rama es un nodo que no es ni la raíz y tiene al menos un hijo</li>
+<li>Las hojas son nodos sin hijos, aka el final de una rama</li>
+<li>Siempre tenemos una relación de padres/hijos<ul>
+<li>También esta el concepto de hermano que es el que comparte un mismo padre en común dentro de la estructura.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Empezamos con arboles binarios, un precursor de los grafos</li>
+<li>Los mapas nos mantienen a todo en un mismo nivel</li>
+<li>Un arbol es una estructura de datos jerárquica que NO ES LINEAL. A diferencia de los arreglos. Donde hay elemento superiores e inferiores.</li>
+<li>Los caminos son únicos dentro del arbol y nos dirigen entre los nodos pasando por las aristas.</li>
+</ul>
+<h2 id="w11m1">W11M1<a class="headerlink" href="#w11m1" title="Permanent link">&para;</a></h2>
+<p>Ordenamiento de arboles BST
 * Recorridos en post-orden
     * La raíz queda de última
 * In-orden
 * Pre-orden
 Idea de separación de responsabilidades
-* La idea es separar una función principal y una función recursiva, de tal forma que se implemente de forma limpia
-## EVA3OP
-### Árboles binarios
-* Mapas ordenados (Tabla de simbolos)
-* Con elementos comparables
-* Permiten acceder a subsets de la información
-* Los árboles nos permiten hacer esto reduciendo los costes de eficiencia.
-* Un árbol es una estructura jerárquica no lineal
-    * Están compuestos por nodos y aristas, los nodos son aquellos que guardan la información en forma de pareja llave-valor
-* Estos tienen raíces, ramas y hojas.
-&gt;[!example] ¿Qué es un árbol
-&gt;- **Nodo**: Unidad básica de un árbol, contiene un dato
-&gt;- **Arista o enlace**: Conexión entre dos nodos
-&gt;- **Raíz**: Nodo sin padre, está en la cima del árbol
-&gt;- **Hijo**: Nodo conectado y descendiente de otro nodo
-&gt;- **Padre**: Nodo que tiene al menos un hijo
-&gt;- **Hermano:** Nodo que comparte a un mismo padre en común dentro de la estructura
-&gt;- **Rama**: Nodo que no es la raíz  y que ademas tiene al menos un hijo
-&gt;   - También se puede llamar así a un camino completo
-&gt;- **Hoja**: Nodo sin hijos. Final de una rama
-
-
-&gt;[!example] ¿Qué es un árbol vacío?
-&gt; árbol sin ningún nodo o arista, obviamente.
-&gt; Es la mínima expresión posible de árbol.
-#### Niveles (Equivalente a profundidad) y otra terminología
-- Un árbol vacío tiene 0 niveles
-- La raíz siempre está en el nivel 0
-- Los hijos de la raíz están en el nivel 1
-- Los &quot;nietos&quot; de la raíz están en el nivel 2
-![[Pasted image 20251104065028.png]]
-* Peso = Número total de nodos
-* Grado = Número máximo de hijos que tiene uno de los nodos del árbol.
-
-#### Árbol n-ario
-* Cada nodo puede tener máximo n hijos.
-#### Árbol binario lleno
-![[Pasted image 20251104065336.png]]
-#### árbol binario perfecto
-![[Pasted image 20251104065409.png]]
-#### árbol binario completo
-![[Pasted image 20251104065512.png]]
-#### árbol binario balanceado
-* Un árbol binario es balanceado si cumple:
-</code></pre></div>
-−1 ≤ factor de equilibrio ≤ 1 para todo nodo
-<div class="highlight"><pre><span></span><code>- Donde el **factor de equilibrio** se calcula como:
-</code></pre></div>
-altura del subárbol derecho − altura del subárbol izquierdo
-<div class="highlight"><pre><span></span><code>### BST I
-* La complejidad temporal de buscar un número en un árbol no ordenado va a tender a `O(n)` cuando este no esta ordenado. Entonces para hacer esta búsqueda efectiva tenemos que usar los Árboles binarios de búsqueda:
-&gt;[!example] Árbol binario de búsqueda
-&gt; - Cada nodo tiene una **llave única y comparable**
-&gt; - Cada nodo puede tener un **valor asociado**
-&gt; - Todos los nodos del **subárbol izquierdo son menores**
-&gt; - Todos los nodos del **subárbol derecho son mayores**
-&gt; - Cada subárbol también es un BST
-* Note que el número de comparaciones para encontrar un número va a ser aproximadamente `h+1`.
-#### Balance del BST
-* Este esta balanceado cuando la altura sea proporcional a `log2(n).
-    * Un árbol balanceado mantiene su altura más baja
-    * Esto garantiza operaciones eficientes
-        * Búsqueda
-        * Inserción
-        * Eliminación
-    * Siempre mantiene la complejidad a `O(log n)`
-* Si el árbol no esta balanceado se asemeja a una estructura lineal y por lo tanto cosas como insertion se vuelven `O(n)`
-#### Complejidad temporal de la búsqueda
-
-- Mejor caso - **O(1)**
-
-    - Si el elemento está en la raíz
-- Promedio - **O(log⁡n)**
-
-    - Árbol balanceado
-- Peor caso - **O(n)**
-
-    - Árbol desbalanceado
-#### Complejidad temporal de la inserción
-
-- Mejor caso - **O(1)**
-
-    - Si el elemento está en la raíz
-- Promedio - **O(log⁡n)**
-
-    - Árbol balanceado
-- Peor caso - **O(n)**
-
-    - Árbol desbalanceado
-#### Complejidad temporal de la eliminación
-
-- Mejor caso - **O(1)**
-
-    - Si el elemento está en la raíz
-- Promedio - **O(log⁡n)**
-
-    - Árbol balanceado
-- Peor caso - **O(n)**
-
-    - Árbol desbalanceado
-### BST II - Recorridos en árboles BST
-#### In-orden
-* Permite acceder en orden ascendente en un BST
-* Primero visita el subarbol izquierdo
-    * Luego el nodo actual
-    * Luego el nodo derecho
-#### Pre-orden
-* Útil para copiar el árbol y obtener una expresión con parentesís
-* Primero se visita nodo actual
-    * Luego subárbol izquierdo
-    * Luego subárbol derecho
-#### Post-orden
-* Útil para eliminado liberar nodos de un árbol (desde las hojas hasta la raíz)
-    * El último elemento visitado es la raíz
-* Primero se visita el subarbol izquierdo
-    * Luego el subarbol derecho
-    * Luego el nodo actual
-### BST III - Implementación
-* implementaciones de `floor()` y `ceiling()`
-### Red-black Tree RBT
-* Se estudia el Left-leaning RBT
-* Que es una variante del BST
-* Que se equilibra después de inserciones y eliminaciones para evitar la degradación del rendimiento
-* Ideal para sistemas de bases de datos
-* Es una estructura que permite acceso rápido
-#### Propiedades del LLRBT
-
-1. Al momento de insertar un nodo, este tiene un **enlace rojo**
-
-    - Excepto **la raíz que siempre es negra**
-2. **Todo enlace rojo se inclina a la izquierda**
-
-3. **No se permiten enlaces rojos a la derecha**
-
-4. **No se permiten dos enlaces rojos consecutivos**
-#### Operaciones de reestructuración del árbol (1/3)
-
-- Son las operaciones que el árbol aplica al **insertar** o **eliminar** nodos
-
-    - Para mantener sus propiedades
-
-
-
-- **Rotación Izquierda**:
-
-    - Endereza un enlace rojo derecho
-        - Pasándolo a la izquierda
-            - Y subiendo el nodo que estaba a la derecha
-- **Rotación Derecha**:
-
-    - Rompe una cadena de dos nodos rojos en la izquierda
-        - Pasando el rojo hacia abajo
-            - Y subiendo al hijo izquierdo
-- **Cambio de color**:
-
-    - Intercambia los colores del nodo padre y de sus dos hijos
-        - Objetivo: Cantidad constante de nodos negros en cada camino
-- **Validación:**
-
-    - Se verifica que el árbol cumpla con todas las propiedades
-        - Si no es así, se hacen las reestructuraciones necesarias
-            - De manera recursiva hasta que se cumplan
-![[Pasted image 20251104080154.png]]
-
-## Simulacro EVA3
-1. se debe implementar  `equals(root1, root2)`
-    1. las soluciones en general van a tener que ser recursivas
-    2. la idea es identificar si efectivamente dos arboles son iguales, la implementación es muy benevolente eso si
-
-```run-python
-def equals(root1, root2):
+* La idea es separar una función principal y una función recursiva, de tal forma que se implemente de forma limpia</p>
+<h2 id="eva3op">EVA3OP<a class="headerlink" href="#eva3op" title="Permanent link">&para;</a></h2>
+<h3 id="arboles-binarios">Árboles binarios<a class="headerlink" href="#arboles-binarios" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mapas ordenados (Tabla de simbolos)</li>
+<li>Con elementos comparables</li>
+<li>Permiten acceder a subsets de la información</li>
+<li>Los árboles nos permiten hacer esto reduciendo los costes de eficiencia.</li>
+<li>Un árbol es una estructura jerárquica no lineal<ul>
+<li>Están compuestos por nodos y aristas, los nodos son aquellos que guardan la información en forma de pareja llave-valor</li>
+</ul>
+</li>
+<li>Estos tienen raíces, ramas y hojas.<blockquote>
+<p>[!example] ¿Qué es un árbol
+- <strong>Nodo</strong>: Unidad básica de un árbol, contiene un dato
+- <strong>Arista o enlace</strong>: Conexión entre dos nodos
+- <strong>Raíz</strong>: Nodo sin padre, está en la cima del árbol
+- <strong>Hijo</strong>: Nodo conectado y descendiente de otro nodo
+- <strong>Padre</strong>: Nodo que tiene al menos un hijo
+- <strong>Hermano:</strong> Nodo que comparte a un mismo padre en común dentro de la estructura
+- <strong>Rama</strong>: Nodo que no es la raíz  y que ademas tiene al menos un hijo
+  - También se puede llamar así a un camino completo
+- <strong>Hoja</strong>: Nodo sin hijos. Final de una rama</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>[!example] ¿Qué es un árbol vacío?
+árbol sin ningún nodo o arista, obviamente.
+Es la mínima expresión posible de árbol.</p>
+</blockquote>
+<h4 id="niveles-equivalente-a-profundidad-y-otra-terminologia">Niveles (Equivalente a profundidad) y otra terminología<a class="headerlink" href="#niveles-equivalente-a-profundidad-y-otra-terminologia" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Un árbol vacío tiene 0 niveles</li>
+<li>La raíz siempre está en el nivel 0</li>
+<li>Los hijos de la raíz están en el nivel 1</li>
+<li>Los "nietos" de la raíz están en el nivel 2
+![[Pasted image 20251104065028.png]]</li>
+<li>Peso = Número total de nodos</li>
+<li>Grado = Número máximo de hijos que tiene uno de los nodos del árbol.</li>
+</ul>
+<h4 id="arbol-n-ario">Árbol n-ario<a class="headerlink" href="#arbol-n-ario" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Cada nodo puede tener máximo n hijos.</li>
+</ul>
+<h4 id="arbol-binario-lleno">Árbol binario lleno<a class="headerlink" href="#arbol-binario-lleno" title="Permanent link">&para;</a></h4>
+<p>![[Pasted image 20251104065336.png]]</p>
+<h4 id="arbol-binario-perfecto">árbol binario perfecto<a class="headerlink" href="#arbol-binario-perfecto" title="Permanent link">&para;</a></h4>
+<p>![[Pasted image 20251104065409.png]]</p>
+<h4 id="arbol-binario-completo">árbol binario completo<a class="headerlink" href="#arbol-binario-completo" title="Permanent link">&para;</a></h4>
+<p>![[Pasted image 20251104065512.png]]</p>
+<h4 id="arbol-binario-balanceado">árbol binario balanceado<a class="headerlink" href="#arbol-binario-balanceado" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Un árbol binario es balanceado si cumple:
+<div class="highlight"><pre><span></span><code>−1 ≤ factor de equilibrio ≤ 1 para todo nodo
+</code></pre></div></li>
+<li>Donde el <strong>factor de equilibrio</strong> se calcula como:
+<div class="highlight"><pre><span></span><code>altura del subárbol derecho − altura del subárbol izquierdo
+</code></pre></div></li>
+</ul>
+<h3 id="bst-i">BST I<a class="headerlink" href="#bst-i" title="Permanent link">&para;</a></h3>
+<ul>
+<li>La complejidad temporal de buscar un número en un árbol no ordenado va a tender a <code>O(n)</code> cuando este no esta ordenado. Entonces para hacer esta búsqueda efectiva tenemos que usar los Árboles binarios de búsqueda:<blockquote>
+<p>[!example] Árbol binario de búsqueda
+- Cada nodo tiene una <strong>llave única y comparable</strong>
+- Cada nodo puede tener un <strong>valor asociado</strong>
+- Todos los nodos del <strong>subárbol izquierdo son menores</strong>
+- Todos los nodos del <strong>subárbol derecho son mayores</strong>
+- Cada subárbol también es un BST</p>
+</blockquote>
+</li>
+<li>Note que el número de comparaciones para encontrar un número va a ser aproximadamente <code>h+1</code>.</li>
+</ul>
+<h4 id="balance-del-bst">Balance del BST<a class="headerlink" href="#balance-del-bst" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Este esta balanceado cuando la altura sea proporcional a `log2(n).<ul>
+<li>Un árbol balanceado mantiene su altura más baja</li>
+<li>Esto garantiza operaciones eficientes<ul>
+<li>Búsqueda</li>
+<li>Inserción</li>
+<li>Eliminación</li>
+</ul>
+</li>
+<li>Siempre mantiene la complejidad a <code>O(log n)</code></li>
+</ul>
+</li>
+<li>Si el árbol no esta balanceado se asemeja a una estructura lineal y por lo tanto cosas como insertion se vuelven <code>O(n)</code></li>
+</ul>
+<h4 id="complejidad-temporal-de-la-busqueda">Complejidad temporal de la búsqueda<a class="headerlink" href="#complejidad-temporal-de-la-busqueda" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Mejor caso - <strong>O(1)</strong></p>
+<ul>
+<li>Si el elemento está en la raíz</li>
+<li>
+<p>Promedio - <strong>O(log⁡n)</strong></p>
+</li>
+<li>
+<p>Árbol balanceado</p>
+</li>
+<li>
+<p>Peor caso - <strong>O(n)</strong></p>
+</li>
+<li>
+<p>Árbol desbalanceado</p>
+</li>
+</ul>
+<h4 id="complejidad-temporal-de-la-insercion">Complejidad temporal de la inserción<a class="headerlink" href="#complejidad-temporal-de-la-insercion" title="Permanent link">&para;</a></h4>
+</li>
+<li>
+<p>Mejor caso - <strong>O(1)</strong></p>
+<ul>
+<li>Si el elemento está en la raíz</li>
+<li>
+<p>Promedio - <strong>O(log⁡n)</strong></p>
+</li>
+<li>
+<p>Árbol balanceado</p>
+</li>
+<li>
+<p>Peor caso - <strong>O(n)</strong></p>
+</li>
+<li>
+<p>Árbol desbalanceado</p>
+</li>
+</ul>
+<h4 id="complejidad-temporal-de-la-eliminacion">Complejidad temporal de la eliminación<a class="headerlink" href="#complejidad-temporal-de-la-eliminacion" title="Permanent link">&para;</a></h4>
+</li>
+<li>
+<p>Mejor caso - <strong>O(1)</strong></p>
+<ul>
+<li>Si el elemento está en la raíz</li>
+<li>
+<p>Promedio - <strong>O(log⁡n)</strong></p>
+</li>
+<li>
+<p>Árbol balanceado</p>
+</li>
+<li>
+<p>Peor caso - <strong>O(n)</strong></p>
+</li>
+<li>
+<p>Árbol desbalanceado</p>
+</li>
+</ul>
+<h3 id="bst-ii-recorridos-en-arboles-bst">BST II - Recorridos en árboles BST<a class="headerlink" href="#bst-ii-recorridos-en-arboles-bst" title="Permanent link">&para;</a></h3>
+<h4 id="in-orden">In-orden<a class="headerlink" href="#in-orden" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Permite acceder en orden ascendente en un BST</li>
+<li>Primero visita el subarbol izquierdo</li>
+<li>Luego el nodo actual</li>
+<li>Luego el nodo derecho</li>
+</ul>
+<h4 id="pre-orden">Pre-orden<a class="headerlink" href="#pre-orden" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Útil para copiar el árbol y obtener una expresión con parentesís</li>
+<li>Primero se visita nodo actual</li>
+<li>Luego subárbol izquierdo</li>
+<li>Luego subárbol derecho</li>
+</ul>
+<h4 id="post-orden">Post-orden<a class="headerlink" href="#post-orden" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Útil para eliminado liberar nodos de un árbol (desde las hojas hasta la raíz)</li>
+<li>El último elemento visitado es la raíz</li>
+<li>Primero se visita el subarbol izquierdo</li>
+<li>Luego el subarbol derecho</li>
+<li>Luego el nodo actual</li>
+</ul>
+<h3 id="bst-iii-implementacion">BST III - Implementación<a class="headerlink" href="#bst-iii-implementacion" title="Permanent link">&para;</a></h3>
+<ul>
+<li>implementaciones de <code>floor()</code> y <code>ceiling()</code></li>
+</ul>
+<h3 id="red-black-tree-rbt">Red-black Tree RBT<a class="headerlink" href="#red-black-tree-rbt" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Se estudia el Left-leaning RBT</li>
+<li>Que es una variante del BST</li>
+<li>Que se equilibra después de inserciones y eliminaciones para evitar la degradación del rendimiento</li>
+<li>Ideal para sistemas de bases de datos</li>
+<li>Es una estructura que permite acceso rápido</li>
+</ul>
+<h4 id="propiedades-del-llrbt">Propiedades del LLRBT<a class="headerlink" href="#propiedades-del-llrbt" title="Permanent link">&para;</a></h4>
+</li>
+<li>
+<p>Al momento de insertar un nodo, este tiene un <strong>enlace rojo</strong></p>
+<ul>
+<li>Excepto <strong>la raíz que siempre es negra</strong></li>
+<li><strong>Todo enlace rojo se inclina a la izquierda</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>No se permiten enlaces rojos a la derecha</strong></p>
+</li>
+<li>
+<p><strong>No se permiten dos enlaces rojos consecutivos</strong></p>
+</li>
+</ul>
+<h4 id="operaciones-de-reestructuracion-del-arbol-13">Operaciones de reestructuración del árbol (1/3)<a class="headerlink" href="#operaciones-de-reestructuracion-del-arbol-13" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Son las operaciones que el árbol aplica al <strong>insertar</strong> o <strong>eliminar</strong> nodos</p>
+<ul>
+<li>Para mantener sus propiedades</li>
+</ul>
+</li>
+<li>
+<p><strong>Rotación Izquierda</strong>:</p>
+<ul>
+<li>Endereza un enlace rojo derecho<ul>
+<li>Pasándolo a la izquierda<ul>
+<li>Y subiendo el nodo que estaba a la derecha</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Rotación Derecha</strong>:</p>
+</li>
+<li>
+<p>Rompe una cadena de dos nodos rojos en la izquierda</p>
+<ul>
+<li>Pasando el rojo hacia abajo<ul>
+<li>Y subiendo al hijo izquierdo</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Cambio de color</strong>:</p>
+</li>
+<li>
+<p>Intercambia los colores del nodo padre y de sus dos hijos</p>
+<ul>
+<li>Objetivo: Cantidad constante de nodos negros en cada camino</li>
+</ul>
+</li>
+<li>
+<p><strong>Validación:</strong></p>
+</li>
+<li>
+<p>Se verifica que el árbol cumpla con todas las propiedades</p>
+<ul>
+<li>Si no es así, se hacen las reestructuraciones necesarias<ul>
+<li>De manera recursiva hasta que se cumplan
+![[Pasted image 20251104080154.png]]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="simulacro-eva3">Simulacro EVA3<a class="headerlink" href="#simulacro-eva3" title="Permanent link">&para;</a></h2>
+<ol>
+<li>se debe implementar  <code>equals(root1, root2)</code><ol>
+<li>las soluciones en general van a tener que ser recursivas</li>
+<li>la idea es identificar si efectivamente dos arboles son iguales, la implementación es muy benevolente eso si</li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>def equals(root1, root2):
 &quot;&quot;&quot;
 Retorna True si los árboles dados son idénticos estructuralmente y en contenido
 &quot;&quot;&quot;
@@ -3143,11 +3247,9 @@ Retorna True si los árboles dados son idénticos estructuralmente y en contenid
     return root1.size_tree() == 1 and root1.size_tree() == 1 and root1[&quot;value&quot;] == root1[&quot;value&quot;]
 # Caso 4 para árboles con un solo nodo diferente (misma llave, pero distinto valor o viceversa, la función debe retornar False)
     # creo que ya se tiene en cuenta en el caso 3
-</code></pre></div></p>
-</li>
-<li>
-<p>Para este punto se pide determinar si un árbol es un BST perfecto, esto quiere decir que esta lleno y que todas las hojas estén al mismo nivel.</p>
+</code></pre></div>
 <ol>
+<li>Para este punto se pide determinar si un árbol es un BST perfecto, esto quiere decir que esta lleno y que todas las hojas estén al mismo nivel.<ol>
 <li>Para esto se considera una función que confirma si un arbol es árbol binario:
 2.
 <div class="highlight"><pre><span></span><code>def is_binary_tree(root):
@@ -3160,7 +3262,7 @@ Retorna True si los árboles dados son idénticos estructuralmente y en contenid
 </code></pre></div></li>
 </ol>
 </li>
-</ul>
+</ol>
 <p>luego entonces para hacer <code>is_perfect_bst(root)</code>:
 <div class="highlight"><pre><span></span><code>def is_perfect_bst(root):
 &quot;&quot;&quot;
